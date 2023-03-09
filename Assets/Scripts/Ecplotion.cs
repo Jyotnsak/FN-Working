@@ -8,7 +8,7 @@ public class Ecplotion : MonoBehaviour
     {
         var exp = GetComponent<ParticleSystem>();
         exp.Play();
-        Destroy(gameObject, exp.duration);
+        Destroy(gameObject, exp.main.duration);
     }
 
 }

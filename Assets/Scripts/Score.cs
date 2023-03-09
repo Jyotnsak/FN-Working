@@ -12,7 +12,7 @@ public class Score
     //array of high scores, indexed by level
     public List<string> highScoreString { get; set; }
     public List<int> highScoreInt { get; set; }
-    private string path = "Assets/Scripts/score.txt";
+    //private string path = "C:\\Users\\Ninja\\Documents\\Food Ninja\\Assets\\Scripts\\score.txt";
 
     private Score()
     {
@@ -21,15 +21,15 @@ public class Score
         highScoreInt = new List<int>();
         highScoreString = new List<string>();
 
-        foreach(string line in File.ReadAllLines(path))
-        {
-            highScoreString.Add(line);
-            highScoreInt.Add(int.Parse(line));
-        }
+        //foreach(string line in File.ReadAllLines(path))
+        //{
+        //    highScoreString.Add(line);
+        //    highScoreInt.Add(int.Parse(line));
+        //}
 
-        //highScore.Add(0);
-        //highScore.Add(0);
-        //highScore.Add(0);
+        highScoreInt.Add(0);
+        highScoreInt.Add(0);
+        highScoreInt.Add(0);
     }
 
     public static Score initialize()
@@ -51,11 +51,11 @@ public class Score
         score.scoreLabel = GameObject.Find("GameController").GetComponent<GameController>().scoreText;
         score.currentScore += inc;
         score.scoreLabel.text = "Score: " + score.currentScore;
-        if (score.currentScore > score.highScoreInt[level])
-        {
-            score.highScoreInt[level] = score.currentScore;
-            score.highScoreString[level] = score.currentScore.ToString();
-            File.WriteAllLines(score.path, score.highScoreString);
-        }
+        //if (score.currentScore > score.highScoreInt[level])
+        //{
+        //    score.highScoreInt[level] = score.currentScore;
+        //    score.highScoreString[level] = score.currentScore.ToString();
+        //    //File.WriteAllLines(score.path, score.highScoreString);
+        //}
     }
 }
